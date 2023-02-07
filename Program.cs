@@ -140,7 +140,32 @@ class Program
         //    return evenNumbers.Length > oddNumbers.Length ? oddNumbers[0] : evenNumbers[0];
         //}
         // }
-}
+
+
+        //In this Kata, you will be given two strings a and b and your task will be to return the characters that are not common in the two strings.solve("xyab", "xzca") = "ybzc"
+
+        //SOLUTION********************************************************************************
+
+        //string check = string.Concat(a, b);
+
+        //List<char> strings = new List<char>();
+
+
+
+        //foreach (char alph in check)
+        //{
+        //    if (!a.Contains(alph) || !b.Contains(alph))
+        //    {
+        //        strings.Add(alph);
+        //        // Console.WriteLine("hello");
+        //    }
+
+        //}
+
+        //Console.WriteLine(a + b);
+        //Console.WriteLine(string.Join("", strings));
+
+    }
 
 
 
