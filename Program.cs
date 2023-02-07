@@ -165,6 +165,66 @@ class Program
         //Console.WriteLine(a + b);
         //Console.WriteLine(string.Join("", strings));
 
+
+        //The Fibonacci numbers are the numbers in the following integer sequence(Fn):
+        //0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, ...
+        //productFib(714) # should return (21, 34, true), 
+        //# since F(8) = 21, F(9) = 34 and 714 = 21 * 34.................
+        //productFib(800) # should return (34, 55, false), 
+        //# since F(8) = 21, F(9) = 34, F(10) = 55 and 21 * 34 < 800 < 34 * 55
+
+        //SOLUTION******************************************************************************
+
+        //        using System;
+        //        using System.Linq;
+        //        using System.Collections.Generic;
+
+        //public class ProdFib
+        //    {
+        //        public static ulong[] productFib(ulong prod)
+        //        {
+
+        //            List<ulong> fibo = new List<ulong>();
+
+        //            List<ulong> nums = new List<ulong>();
+        //            nums.Add(0);
+        //            nums.Add(1);
+        //            for (int i = 0; i < 50; i++)
+        //            {
+        //                nums.Add(nums[i] + nums[i + 1]);
+        //            }
+
+        //            for (int i = 0; i < nums.Count; i++)
+        //            {
+        //                if ((nums[i] * nums[i + 1]) == prod)
+        //                {
+        //                    fibo.Add(nums[i]);
+        //                    fibo.Add(nums[i + 1]);
+        //                    fibo.Add(1);
+        //                    break;
+        //                }
+
+        //                if ((nums[i] * nums[i + 1]) > prod)
+        //                {
+        //                    fibo.Add(nums[i]);
+        //                    fibo.Add(nums[i + 1]);
+        //                    fibo.Add(0);
+        //                    break;
+        //                }
+
+        //            }
+        //            return fibo.ToArray();
+        //        }
+        //    }
+
+        //**************************************************
+        int[] userAge = new int[5]; 
+        userAge = new[] { 21, 22, 23, 24, 25 };
+        //Array.Sort(userAge);
+        userAge.OrderByDescending(num => num);
+        int sum = userAge.Aggregate((a, b) => a - b); //this aggregate works like reduce in javascript
+        Console.WriteLine(sum);
+
     }
 
 
