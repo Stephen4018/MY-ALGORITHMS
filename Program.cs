@@ -256,28 +256,38 @@ class Program
 
 
 
-        int n = 1134;
+        int n = 700000;
         string ns = n.ToString();
         int one = int.Parse(ns.Substring(ns.Length - 1));
         int two = int.Parse(ns.Substring(ns.Length - 2, 1));
         string news = "";
 
-        if(one == 1) 
-        {
-           news = ns + "st";
-        }
-        else if(one == 2) 
-        {
-            news = ns + "nd";
-        }
-        else if (one == 3)
-        {
-            news = ns + "rd";
-        }
-        else if (one >= 4)
+        if(one + two == 2 || (one == 2 && two == 1) || one + two == 4)
         {
             news = ns + "th";
         }
+        else
+        {
+            if (one == 1)
+            {
+                news = ns + "st";
+            }
+            else if (one == 2)
+            {
+                news = ns + "nd";
+            }
+            else if (one == 3)
+            {
+                news = ns + "rd";
+            }
+            else if (one >= 4)
+            {
+                news = ns + "th";
+            }
+        }
+       
+
+        
 
         Console.WriteLine(news);
 
