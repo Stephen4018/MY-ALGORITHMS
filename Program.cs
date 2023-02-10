@@ -223,7 +223,64 @@ class Program
         //Array.Sort(userAge);
         userAge.OrderByDescending(num => num);
         int sum = userAge.Aggregate((a, b) => a - b); //this aggregate works like reduce in javascript
-        Console.WriteLine(sum);
+        //Console.WriteLine(sum);
+
+
+
+        //Usually when you buy something, you're asked whether your credit card number, phone number or answer to your most secret question is still correct. However, since someone could look over your shoulder, you don't want that shown on your screen.Instead, we mask it.
+        //Your task is to write a function maskify, which changes all but the last four characters into '#'.
+        //Examples
+        //"4556364607935616"-- > "############5616"
+        // "64607935616"-- > "#######5616"
+        //SOLUTION**************************************************************************************
+        string letter = "Nananananananananananananananana Batman!";
+        char[] charArray = letter.ToCharArray();
+        string prints = "";
+        if(letter.Length > 4) 
+        {
+            for (int i = 0; i < charArray.Length - 4; i++)
+            {
+                prints += '#';
+            }
+            //Console.WriteLine(prints + letter.Substring(letter.Length - 4));
+
+        }
+        else
+        {
+            //Console.WriteLine(letter);
+        }
+
+        string h = "hello";
+        string g = h.PadLeft(15, '#');
+        //Console.WriteLine(g);
+
+
+
+        int n = 1134;
+        string ns = n.ToString();
+        int one = int.Parse(ns.Substring(ns.Length - 1));
+        int two = int.Parse(ns.Substring(ns.Length - 2, 1));
+        string news = "";
+
+        if(one == 1) 
+        {
+           news = ns + "st";
+        }
+        else if(one == 2) 
+        {
+            news = ns + "nd";
+        }
+        else if (one == 3)
+        {
+            news = ns + "rd";
+        }
+        else if (one >= 4)
+        {
+            news = ns + "th";
+        }
+
+        Console.WriteLine(news);
+
 
     }
 
