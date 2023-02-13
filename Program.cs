@@ -218,7 +218,7 @@ class Program
         //    }
 
         //**************************************************
-        int[] userAge = new int[5]; 
+        int[] userAge = new int[5];
         userAge = new[] { 21, 22, 23, 24, 25 };
         //Array.Sort(userAge);
         userAge.OrderByDescending(num => num);
@@ -236,7 +236,7 @@ class Program
         string letter = "Nananananananananananananananana Batman!";
         char[] charArray = letter.ToCharArray();
         string prints = "";
-        if(letter.Length > 4) 
+        if (letter.Length > 4)
         {
             for (int i = 0; i < charArray.Length - 4; i++)
             {
@@ -250,50 +250,95 @@ class Program
             //Console.WriteLine(letter);
         }
 
-        string h = "hello";
-        string g = h.PadLeft(15, '#');
+        //string h = "hello";
+        //string g = h.PadLeft(15, '#');
         //Console.WriteLine(g);
 
 
 
-        int n = 700000;
-        string ns = n.ToString();
-        int one = int.Parse(ns.Substring(ns.Length - 1));
-        int two = int.Parse(ns.Substring(ns.Length - 2, 1));
-        string news = "";
+        //Finish the function numberToOrdinal, which should take a number and return it as a string with the correct ordinal indicator suffix(in English).That is:
+        //numberToOrdinal(1) ==> '1st'
+        //numberToOrdinal(2) ==> '2nd'
+        //SOLUTION*************************************************************************
 
-        if(one + two == 2 || (one == 2 && two == 1) || one + two == 4)
+        //public class  string numberToOrdinal(int n)
+        //{
+        //if (n == 0) return "0";
+        //int num = n % 10;
+        //string ns = n.ToString();
+        //int two = int.Parse(ns.Substring(ns.Length - 2));
+
+        //string suffix = "th";
+
+        //if (num == 1 && two != 11)
+        //{
+        //    suffix = "st";
+        //}
+        //else if (num == 2 && two != 12)
+        //{
+        //    suffix = "nd";
+        //}
+        //else if (num == 3 && two != 13)
+        //{
+        //    suffix = "rd";
+        //}
+
+        //return n.ToString() + suffix;
+
+
+        string word = "Hey fellow warriors";
+        string[] newWord = word.Split(' ');
+        //List<char> words = new List<char>();
+        //var check = newWord.Select(x => x.Length >= 5 ? x.Reverse() : x);
+        for (int i = 0; i < newWord.Length; i++)
         {
-            news = ns + "th";
+            char[] one = newWord[i].ToCharArray();
+            if (newWord[i].Length >= 5)
+            {
+                newWord[i].Reverse();
+            }
+        }
+        //Console.WriteLine(string.Join(" ", newWord));
+
+
+
+
+
+        List<int> num = new List<int> { 0, 9, 9, 3 };
+        char[] myArray = new char[] { '0' };
+        char[] digit = (int.Parse(string.Join("", num)) + 1).ToString().ToCharArray();
+
+
+        foreach (int i in num)
+        {
+            if(i < 0 || i.ToString().Length > 1)
+            {
+                Console.WriteLine("null");
+            }
+        }
+        
+
+        if (num[0] == 0 && num[num.Count - 1] != 9) 
+        {
+            char[] resultArray = myArray.Concat(digit).ToArray();
+            Console.WriteLine(string.Join(" ", resultArray));
         }
         else
         {
-            if (one == 1)
-            {
-                news = ns + "st";
-            }
-            else if (one == 2)
-            {
-                news = ns + "nd";
-            }
-            else if (one == 3)
-            {
-                news = ns + "rd";
-            }
-            else if (one >= 4)
-            {
-                news = ns + "th";
-            }
+            Console.WriteLine(string.Join(", ", digit));
         }
        
+        //Console.WriteLine(num[0] );
+        //
 
-        
 
-        Console.WriteLine(news);
+
+
+    }
 
 
     }
 
 
 
-}
+
