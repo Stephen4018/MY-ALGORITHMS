@@ -261,29 +261,30 @@ class Program
         //numberToOrdinal(2) ==> '2nd'
         //SOLUTION*************************************************************************
 
-        //public class  string numberToOrdinal(int n)
-        //{
-        //if (n == 0) return "0";
-        //int num = n % 10;
-        //string ns = n.ToString();
-        //int two = int.Parse(ns.Substring(ns.Length - 2));
 
-        //string suffix = "th";
+        int n = 1000;
+        if (n == 0) Console.WriteLine("0");
+        int num = n % 10;
+        string ns = n.ToString();
+        int two = int.Parse(ns.Substring(ns.Length - 2));
 
-        //if (num == 1 && two != 11)
-        //{
-        //    suffix = "st";
-        //}
-        //else if (num == 2 && two != 12)
-        //{
-        //    suffix = "nd";
-        //}
-        //else if (num == 3 && two != 13)
-        //{
-        //    suffix = "rd";
-        //}
+        string suffix = "th";
 
-        //return n.ToString() + suffix;
+        if (num == 1 && two != 11)
+        {
+            suffix = "st";
+        }
+        else if (num == 2 && two != 12)
+        {
+            suffix = "nd";
+        }
+        else if (num == 3 && two != 13)
+        {
+            suffix = "rd";
+        }
+
+       Console.WriteLine(n.ToString() + suffix);
+    
 
 
         string word = "Hey fellow warriors";
@@ -304,29 +305,29 @@ class Program
 
 
 
-        List<int> num = new List<int> { 0, 9, 9, 3 };
-        char[] myArray = new char[] { '0' };
-        char[] digit = (int.Parse(string.Join("", num)) + 1).ToString().ToCharArray();
+        //List<int> num = new List<int> { 0, 9, 9, 3 };
+        //char[] myArray = new char[] { '0' };
+        //char[] digit = (int.Parse(string.Join("", num)) + 1).ToString().ToCharArray();
 
 
-        foreach (int i in num)
-        {
-            if(i < 0 || i.ToString().Length > 1)
-            {
-                Console.WriteLine("null");
-            }
-        }
+        //foreach (int i in num)
+        //{
+        //    if(i < 0 || i.ToString().Length > 1)
+        //    {
+        //        //Console.WriteLine("null");
+        //    }
+        //}
         
 
-        if (num[0] == 0 && num[num.Count - 1] != 9) 
-        {
-            char[] resultArray = myArray.Concat(digit).ToArray();
-            Console.WriteLine(string.Join(" ", resultArray));
-        }
-        else
-        {
-            Console.WriteLine(string.Join(", ", digit));
-        }
+        //if (num[0] == 0 && num[num.Count - 1] != 9) 
+        //{
+        //    char[] resultArray = myArray.Concat(digit).ToArray();
+        //    //Console.WriteLine(string.Join(" ", resultArray));
+        //}
+        //else
+        //{
+        //    //Console.WriteLine(string.Join(", ", digit));
+        //}
        
         //Console.WriteLine(num[0] );
         //
