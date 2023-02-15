@@ -5,7 +5,9 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.Intrinsics.X86;
 using System.Security.Cryptography;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 class Program
@@ -317,7 +319,7 @@ class Program
         //        //Console.WriteLine("null");
         //    }
         //}
-        
+
 
         //if (num[0] == 0 && num[num.Count - 1] != 9) 
         //{
@@ -328,17 +330,85 @@ class Program
         //{
         //    //Console.WriteLine(string.Join(", ", digit));
         //}
-       
+
         //Console.WriteLine(num[0] );
         //
 
+        //Poker Chips: Luigy works in a Casino and he gives customers poker chips in exchange of money.Find the minimum number of chips Luigy can use to match the customer requests. He has chips worth 100, 50, 25, 10, 5, 1.For example, for 126 Luigy should give 3 chips(100, 25, 1).
+        
+        int nums = 226;
+        int count = 0;
+        //while(nums >= 100)
+        //{
+        //    nums = nums - 100;
+        //    count++;
+        //}
+        //while(nums >= 50)
+        //{
+        //    nums = nums - 50;
+        //    count++;
+        //}
+        //while(nums >= 25)
+        //{
+        //    nums = nums - 25;
+        //    count++;
+        //}
+        //while (nums >= 10)
+        //{
+        //    nums = nums - 10;
+        //    count++;
+        //}
+        //while (nums >= 5)
+        //{
+        //    nums = nums - 5;
+        //    count++;
+        //}
+        //while (nums >= 1)
+        //{
+        //    nums = nums - 25;
+        //    count++;
+        //}
+        //Console.WriteLine();
+
+
+        while (nums >= 100)
+        {
+            nums = nums % 100;
+            count /= 100;
+        }
+        while (nums >= 50)
+        {
+            nums = nums % 50;
+            count /= 50;
+        }
+        while (nums >= 25)
+        {
+            nums = nums % 25;
+            count /= 25;
+        }
+        while (nums >= 10)
+        {
+            nums = nums % 10;
+            count /= 10;
+        }
+        while (nums >= 5)
+        {
+            nums = nums % 5;
+            count /= 5;
+        }
+        while (nums >= 1)
+        {
+            nums = nums % 25;
+            count /= 1;
+        }
+
+        Console.WriteLine(count);
+
 
 
 
     }
-
-
-    }
+}
 
 
 
