@@ -401,9 +401,29 @@ class Program
 
         //anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']) => ['aabb', 'bbaa']
 
-        string wordina = "abba";
+        string wordina = "racer";
+        string[] arr = { "crazer", "carer", "racar", "caers", "racer" };
 
-        string[] arr = { "aabb", "abcd", "bbaa", "dada" };
+        List<string> myword= new List<string>();
+        char[] sorter = wordina.ToCharArray();
+
+       Array.Sort(sorter);
+        string chared = string.Join("", sorter);
+
+        foreach(string c in arr)
+        {
+            char[] ant = c.ToCharArray();
+            Array.Sort(ant);
+            string.Join(" ", ant);
+            if(chared == string.Join("", ant))
+            {
+                myword.Add(c);
+            }
+        }
+
+        Console.WriteLine(string.Join(" ", myword));
+        
+
 
 
 
