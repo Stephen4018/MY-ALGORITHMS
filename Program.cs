@@ -285,7 +285,7 @@ class Program
             suffix = "rd";
         }
 
-       Console.WriteLine(n.ToString() + suffix);
+       //Console.WriteLine(n.ToString() + suffix);
     
 
 
@@ -338,71 +338,77 @@ class Program
         
         int nums = 226;
         int count = 0;
-        //while(nums >= 100)
-        //{
-        //    nums = nums - 100;
-        //    count++;
-        //}
-        //while(nums >= 50)
-        //{
-        //    nums = nums - 50;
-        //    count++;
-        //}
-        //while(nums >= 25)
-        //{
-        //    nums = nums - 25;
-        //    count++;
-        //}
-        //while (nums >= 10)
-        //{
-        //    nums = nums - 10;
-        //    count++;
-        //}
-        //while (nums >= 5)
-        //{
-        //    nums = nums - 5;
-        //    count++;
-        //}
-        //while (nums >= 1)
-        //{
-        //    nums = nums - 25;
-        //    count++;
-        //}
-        //Console.WriteLine();
-
-
         while (nums >= 100)
         {
-            nums = nums % 100;
-            count /= 100;
+            nums = nums - 100;
+            count++;
         }
         while (nums >= 50)
         {
-            nums = nums % 50;
-            count /= 50;
+            nums = nums - 50;
+            count++;
         }
         while (nums >= 25)
         {
-            nums = nums % 25;
-            count /= 25;
+            nums = nums - 25;
+            count++;
         }
         while (nums >= 10)
         {
-            nums = nums % 10;
-            count /= 10;
+            nums = nums - 10;
+            count++;
         }
         while (nums >= 5)
         {
-            nums = nums % 5;
-            count /= 5;
+            nums = nums - 5;
+            count++;
         }
         while (nums >= 1)
         {
-            nums = nums % 25;
-            count /= 1;
+            nums = nums - 25;
+            count++;
         }
+        //Console.WriteLine();
 
-        Console.WriteLine(count);
+
+
+//        Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string.The input string can be assumed to contain only alphabets(both uppercase and lowercase) and numeric digits.
+//Example
+//"abcde"-> 0 # no characters repeats more than once
+//"aabbcde"-> 2 # 'a' and 'b'
+//"aabBcde"-> 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
+//"indivisibility"-> 1 # 'i' occurs six times
+//"Indivisibilities"-> 2 # 'i' occurs seven times and 's' occurs twice
+//"aA11"-> 2 # 'a' and '1'
+//"ABBA"-> 2 # 'A' and 'B' each occur twice
+
+        HashSet<char> words = new HashSet<char>();
+        string str = "aabbcde";
+        string newStr = str.ToLower();
+        char[] chars = newStr.ToCharArray();
+        Array.Sort(chars);
+        int counts = 0;
+
+        for(int i = 0; i < chars.Length-1;i++)
+        {
+            if (chars[i] == chars[i + 1])
+            {
+                words.Add(chars[i]);
+            }
+        }
+        //Console.WriteLine(words.Count);
+
+
+        //anagrams('abba', ['aabb', 'abcd', 'bbaa', 'dada']) => ['aabb', 'bbaa']
+
+        string wordina = "abba";
+
+        string[] arr = { "aabb", "abcd", "bbaa", "dada" };
+
+
+
+
+
 
 
 
