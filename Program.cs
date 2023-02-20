@@ -421,9 +421,43 @@ class Program
             }
         }
 
-        Console.WriteLine(string.Join(" ", myword));
-        
+        //Console.WriteLine(string.Join(" ", myword));
 
+
+        string wordi = "XXOo";
+        string upper = wordi.ToUpper();
+        //int re = upper.Count(b => b == 'X');
+        //int be = upper.Count(b => b == 'O');
+        if(upper.Count(b => b == 'X') == upper.Count(b => b == 'O'))
+        {
+            //Console.WriteLine("true");
+        }
+        else
+        {
+            //Console.WriteLine("false");
+        }
+        //if(re == be)
+        //{
+        //    Console.WriteLine("true");
+        //}
+        //else
+        //{
+        //    Console.WriteLine("false");
+        //}
+        //Console.WriteLine(re);
+
+        List<int> tt = new List<int>{ 2, 4, 6, 8, 10, 12, 14, 16 };
+        List<int> change = new List<int>();
+        int a = 2;
+        int k = 0;
+        for(int i=0; k <tt.Count/2; i += a )
+        {
+           tt.RemoveAt(i+1);
+            tt.Insert(i, i+1);
+            k++;
+
+        }
+        Console.Write(string.Join(" ", tt));
 
 
 
