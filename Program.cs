@@ -436,28 +436,49 @@ class Program
         {
             //Console.WriteLine("false");
         }
-        //if(re == be)
-        //{
-        //    Console.WriteLine("true");
-        //}
-        //else
-        //{
-        //    Console.WriteLine("false");
-        //}
-        //Console.WriteLine(re);
+       
 
         List<int> tt = new List<int>{ 2, 4, 6, 8, 10, 12, 14, 16 };
         List<int> change = new List<int>();
         int a = 2;
-        int k = 0;
-        for(int i=0; k <tt.Count/2; i += a )
+        for(int i=0; i <= tt.Count/a; i+=a )
         {
-           tt.RemoveAt(i+1);
-            tt.Insert(i, i+1);
-            k++;
+           for(int k=i+(a-1); k>=i; k--)
+            {
+                change.Add(tt[k]);
+            }
 
         }
-        Console.Write(string.Join(" ", tt));
+
+        List<string> Alist = new List<string>();
+        List<string> AAAlist = new List<string>();
+
+        string aword = "HbideVbxncC";
+        char[] myChar = aword.ToCharArray();
+       for(int i = 0; i < myChar.Length; i++)
+        {
+            string fix = new(myChar[i], i + 1);
+            Alist.Add(fix);
+        }
+
+       for(int i = 0; i < Alist.Count; i++)
+        {
+            AAAlist.Add(Alist[i].Substring(0, 1).ToUpper() + Alist[i].Substring(1).ToLower());
+        }
+        Console.WriteLine(string.Join("-", AAAlist));
+
+        //Alist[Alist.Count - 1] = Alist[Alist.Count - 1][..1].ToUpper() + Alist[Alist.Count - 1][1..].ToLower();
+
+        //Console.WriteLine(string.Join("-", Alist));
+
+        //foreach (string s in Alist)
+        //{
+        //    Console.WriteLine(s);
+        //}
+
+        //fix.Substring(0, 1).ToUpper() + fix.Substring(1)
+
+
 
 
 
