@@ -455,17 +455,17 @@ class Program
 
         string aword = "HbideVbxncC";
         char[] myChar = aword.ToCharArray();
-       for(int i = 0; i < myChar.Length; i++)
+        for (int i = 0; i < myChar.Length; i++)
         {
             string fix = new(myChar[i], i + 1);
             Alist.Add(fix);
         }
 
-       for(int i = 0; i < Alist.Count; i++)
+        for (int i = 0; i < Alist.Count; i++)
         {
             AAAlist.Add(Alist[i].Substring(0, 1).ToUpper() + Alist[i].Substring(1).ToLower());
         }
-        Console.WriteLine(string.Join("-", AAAlist));
+        //Console.WriteLine(string.Join("-", AAAlist));
 
         //Alist[Alist.Count - 1] = Alist[Alist.Count - 1][..1].ToUpper() + Alist[Alist.Count - 1][1..].ToLower();
 
@@ -478,6 +478,36 @@ class Program
 
         //fix.Substring(0, 1).ToUpper() + fix.Substring(1)
 
+        int[] myArray = { 1, 2, 0, 1, 0, 1, 0, 3, 0, 1 };
+
+        List<int> sele = myArray.OrderBy(x => x== 0).ToList();
+
+        //int substract = myArray.Length - sele.Count;
+        //for(int i = 0;i < substract;i++) 
+        //{
+        //    sele.Add(0);
+        //}
+
+        //Console.WriteLine(substract);
+        
+        //Console.WriteLine(string.Join(" ", sele));
+
+
+        int r = 148, g = -20, b = 211;
+        List<int> list = new List<int>() { r, g, b };
+        for (int i = 0; i < list.Count; i++)
+        {
+            if (list[i] < 0)
+            {
+                list[i] = 00;
+            }
+            if (list[i] > 255)
+            {
+                list[i] = 255;
+            }
+
+        }
+        Console.WriteLine(list[0].ToString("X") + list[1].ToString("X") + list[2].ToString("X"));
 
 
 
@@ -485,10 +515,15 @@ class Program
 
 
 
-
-
-
+        Console.WriteLine((dev) 2);
     }
+    enum dev
+    {
+        jan,
+        feb,
+        march
+    }
+   
 }
 
 
