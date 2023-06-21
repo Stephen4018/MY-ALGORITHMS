@@ -49,7 +49,7 @@ namespace MY_ALGORITHMS
             return VersionFunction(1, n);
         }
 
-        public int VersionFunction(int first, int last)
+        public static int VersionFunction(int first, int last)
         {
             while (first < last)
             {
@@ -68,10 +68,23 @@ namespace MY_ALGORITHMS
             return first;
         }
 
-        public bool IsBadVersion(int digit)
+        public static bool IsBadVersion(int digit)
         {
             return true;
         }
 
+
+        public static int SearchInsert(int[] nums, int target)
+        {
+            int start = nums[0];
+            int end = nums[nums.Length - 1];
+
+            while(start <= end)
+            {
+                double mid = start + (end - start) / 2;
+                double ceils = Math.Ceiling(mid);
+            }
+            return 0;
+        }
     }
 }
