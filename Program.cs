@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MY_ALGORITHMS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -285,8 +286,8 @@ class Program
             suffix = "rd";
         }
 
-       //Console.WriteLine(n.ToString() + suffix);
-    
+        //Console.WriteLine(n.ToString() + suffix);
+
 
 
         string word = "Hey fellow warriors";
@@ -335,7 +336,7 @@ class Program
         //
 
         //Poker Chips: Luigy works in a Casino and he gives customers poker chips in exchange of money.Find the minimum number of chips Luigy can use to match the customer requests. He has chips worth 100, 50, 25, 10, 5, 1.For example, for 126 Luigy should give 3 chips(100, 25, 1).
-        
+
         int nums = 226;
         int count = 0;
         while (nums >= 100)
@@ -372,15 +373,15 @@ class Program
 
 
 
-//        Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string.The input string can be assumed to contain only alphabets(both uppercase and lowercase) and numeric digits.
-//Example
-//"abcde"-> 0 # no characters repeats more than once
-//"aabbcde"-> 2 # 'a' and 'b'
-//"aabBcde"-> 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
-//"indivisibility"-> 1 # 'i' occurs six times
-//"Indivisibilities"-> 2 # 'i' occurs seven times and 's' occurs twice
-//"aA11"-> 2 # 'a' and '1'
-//"ABBA"-> 2 # 'A' and 'B' each occur twice
+        //        Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string.The input string can be assumed to contain only alphabets(both uppercase and lowercase) and numeric digits.
+        //Example
+        //"abcde"-> 0 # no characters repeats more than once
+        //"aabbcde"-> 2 # 'a' and 'b'
+        //"aabBcde"-> 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
+        //"indivisibility"-> 1 # 'i' occurs six times
+        //"Indivisibilities"-> 2 # 'i' occurs seven times and 's' occurs twice
+        //"aA11"-> 2 # 'a' and '1'
+        //"ABBA"-> 2 # 'A' and 'B' each occur twice
 
         HashSet<char> words = new HashSet<char>();
         string str = "aabbcde";
@@ -389,7 +390,7 @@ class Program
         Array.Sort(chars);
         int counts = 0;
 
-        for(int i = 0; i < chars.Length-1;i++)
+        for (int i = 0; i < chars.Length - 1; i++)
         {
             if (chars[i] == chars[i + 1])
             {
@@ -404,18 +405,18 @@ class Program
         string wordina = "racer";
         string[] arr = { "crazer", "carer", "racar", "caers", "racer" };
 
-        List<string> myword= new List<string>();
+        List<string> myword = new List<string>();
         char[] sorter = wordina.ToCharArray();
 
-       Array.Sort(sorter);
+        Array.Sort(sorter);
         string chared = string.Join("", sorter);
 
-        foreach(string c in arr)
+        foreach (string c in arr)
         {
             char[] ant = c.ToCharArray();
             Array.Sort(ant);
             string.Join(" ", ant);
-            if(chared == string.Join("", ant))
+            if (chared == string.Join("", ant))
             {
                 myword.Add(c);
             }
@@ -428,7 +429,7 @@ class Program
         string upper = wordi.ToUpper();
         //int re = upper.Count(b => b == 'X');
         //int be = upper.Count(b => b == 'O');
-        if(upper.Count(b => b == 'X') == upper.Count(b => b == 'O'))
+        if (upper.Count(b => b == 'X') == upper.Count(b => b == 'O'))
         {
             //Console.WriteLine("true");
         }
@@ -436,14 +437,14 @@ class Program
         {
             //Console.WriteLine("false");
         }
-       
 
-        List<int> tt = new List<int>{ 2, 4, 6, 8, 10, 12, 14, 16 };
+
+        List<int> tt = new List<int> { 2, 4, 6, 8, 10, 12, 14, 16 };
         List<int> change = new List<int>();
         int a = 2;
-        for(int i=0; i <= tt.Count/a; i+=a )
+        for (int i = 0; i <= tt.Count / a; i += a)
         {
-           for(int k=i+(a-1); k>=i; k--)
+            for (int k = i + (a - 1); k >= i; k--)
             {
                 change.Add(tt[k]);
             }
@@ -480,7 +481,7 @@ class Program
 
         int[] myArray = { 1, 2, 0, 1, 0, 1, 0, 3, 0, 1 };
 
-        List<int> sele = myArray.OrderBy(x => x== 0).ToList();
+        List<int> sele = myArray.OrderBy(x => x == 0).ToList();
 
         //int substract = myArray.Length - sele.Count;
         //for(int i = 0;i < substract;i++) 
@@ -489,7 +490,7 @@ class Program
         //}
 
         //Console.WriteLine(substract);
-        
+
         //Console.WriteLine(string.Join(" ", sele));
 
 
@@ -507,24 +508,260 @@ class Program
             }
 
         }
-        Console.WriteLine(list[0].ToString("X") + list[1].ToString("X") + list[2].ToString("X"));
+        //Console.WriteLine(list[0].ToString("X") + list[1].ToString("X") + list[2].ToString("X"));
+
+
+
+        string ones = "codewars";
+        string twos = "cod";
+        string three = "wars";
+
+        string joined = twos + three;
+        char[] mixed = joined.ToCharArray();
+        if (ones.Length != joined.Length)
+        {
+            //Console.WriteLine("false");
+        }
+        foreach (char c in mixed)
+        {
+            if (!ones.Contains(c))
+            {
+                //Console.WriteLine("false");
+            }
+        }
+        //Console.WriteLine("true");
+
+        //FACTORIAL QUESTION
+        //int nnn = 25;
+        //decimal multipy = 1;
+        //for(int i = nnn; i > 0; i--) 
+        //{
+        //multipy *= i;
+
+        //}
+        //Console.WriteLine(multipy);
+
+
+        string operato = "..... * ...";
+        char[] actual = operato.Where(x => x == '+' || x == '*' || x == '-' || x == '/').ToArray();
+        string plus = string.Join("", actual);
+        string[] joinedStr = operato.Split(plus);
+
+        string finish = "";
+        int fnum = joinedStr[0].Length - 1;
+        int lnum = joinedStr[1].Length;
+        int got = 0;
+        if (plus == "+")
+        {
+            got = fnum + lnum;
+        }
+        else if (plus == "*")
+        {
+            got = fnum * lnum;
+        }
+
+        for (int i = 0; i < got; i++)
+        {
+            finish += ".";
+        }
 
 
 
 
+        string text = "The sunset sets at twelve o' clock.";
+        string lower = text.ToLower();
+        string lettering = "abcdefghijklmnopqrstuvwxyz";
+        List<int> myListing = new List<int>();
+        foreach (char l in lower)
+        {
+            if (char.IsLetter(l))
+            {
+                myListing.Add(lettering.IndexOf(l) + 1);
+
+            }
+        }
+
+        //Console.WriteLine(string.Join(" ", myListing));
+
+
+        List<int> ints = new List<int>();
+        string lala = "what time are we climbing up to the volcano zzziczasolomuvvx5";
+        string llower = lala.ToLower();
+        string[] sp = lala.Split(" ").ToArray();
+        int cun = 0;
+
+        foreach (string h in sp)
+        {
+            foreach (char ro in h)
+            {
+                cun += lettering.IndexOf(ro) + 1;
+            }
+            ints.Add(cun);
+            cun = 0;
+
+        }
+        int kkk = ints.Max();
+        int idx = ints.IndexOf(kkk);
+        //Console.WriteLine(idx);
+        //Console.WriteLine(sp[idx]);
+        //Console.WriteLine(string.Join(" ", ints));
+
+
+        long nil = 15241383936;
+        long kil = 0;
+        for (long i = 1; i < 10000000; i++)
+        {
+            long res = nil / i;
+            //Console.WriteLine("{0}, {1}", res, i );
+            if (res == i)
+            {
+                i++;
+                //Console.WriteLine(i * i);
+            }
+            //Console.WriteLine("-1");
+            //if(res == i)
+        }
+
+        string stir = "rgdeghrlo";
+
+        List<string> llist = new List<string>();
+        List<string> lx = new List<string>();
+        int numo = 0;
+        string wordw = "";
+        foreach (char c in stir)
+        {
+            numo = stir.IndexOf(c) + 1;
+            for (int i = 0; i < numo; i++)
+            {
+                wordw = wordw + c;
+            }
+            llist.Add(wordw);
+            wordw = "";
+        }
+        foreach (string w in llist)
+        {
+
+            lx.Add(w.Substring(0, 1).ToUpper() + w.Substring(1).ToLower());
 
 
 
-        Console.WriteLine((dev) 2);
+        }
+        //Console.WriteLine(string.Join("-", lx));
+
+
+        char[] miu = { 'a', 'b', 'c' };
+        int start = 1;
+        int counted = 2;
+        char[] aer = new char[counted];
+
+        int subtract = Math.Abs( counted - start);
+        if( miu.Length < subtract || start < 0 || miu.Length == 0)
+        {
+            Console.WriteLine("null");
+        }
+        int j = 0;
+        for(int i = start; j < counted; i++)
+        {
+            aer[j] = miu[i];
+            j++;
+        }
+
+        //Console.WriteLine(string.Join(" ", aer));
+
+
+        int[] an = {18};
+        int[] ann = { 1, 2, -18, -18, 1, 2 };
+        int[] che = { 6, 2, 1, 0, 0, 0, 1, 0, 0, 0 };
+        //hasSingleMaximum(an);
+        //Console.WriteLine(hasSingleMaximum(an));
+        //Console.WriteLine(isMaritan(ann));
+        Console.WriteLine(isSelfReferential(che));
+
+        leetcode_sir_Angelo_Day1 method = new leetcode_sir_Angelo_Day1();
+        method.FirstBadVersion(10);
     }
-    enum dev
+
+
+    public static int hasSingleMaximum(int[] a)
     {
-        jan,
-        feb,
-        march
+        int max = int.MinValue;
+        int max2 = 0;
+        for (int i = 0; i < a.Length; i++)
+        {
+            if (a[i] > max) 
+            { 
+                max = a[i];
+            }
+            max2= a[i];
+            if(max == max2 && a.Length > 1)
+            {
+                return 0;
+
+            }
+        }
+        return 1;
+
     }
-   
+
+    public static int isMaritan(int[] a)
+    {
+        int numberOfOne = 0;
+        int numberOfTwo = 0;
+        for (int i = 0; i <= a.Length - 1; i++)
+        {
+            if(i < a.Length - 1 && a[i] == a[i + 1])
+                return 0;
+            if (a[i] == 1)
+            {
+                numberOfOne++;
+            }
+            if (a[i] == 2)
+            {
+                numberOfTwo++;
+            }
+        }
+        if(numberOfOne > numberOfTwo)
+        {
+            return 1;
+        }
+        return 0;
+    }
+
+    public static int isSelfReferential(int[] a)
+    {
+        for (int i = 0; i < a.Length ; i++)
+        {
+            int numberValue = 0;
+            for(int j =0; j < a.Length; j++) 
+            {
+                if (a[j] == i) 
+                {
+                    numberValue++; ;
+                }
+            }
+            if(numberValue != a[i])
+            {
+                return 0;
+            }
+            
+        }
+        return 1;
+
+    }
+
+
+    
+
+
+
+
+
+
+
 }
+
+
+
 
 
 
