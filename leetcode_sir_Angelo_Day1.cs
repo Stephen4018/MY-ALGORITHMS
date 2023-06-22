@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Security.Cryptography;
@@ -74,17 +75,34 @@ namespace MY_ALGORITHMS
         }
 
 
-        public static int SearchInsert(int[] nums, int target)
+        //Given a sorted array of distinct integers and a target value, return the index if the target is found.If not, return the index where it would be if it were inserted in order.
+        //You must write an algorithm with O(log n) runtime complexity.
+        public int SearchInsert(int[] nums, int target)
         {
-            int start = nums[0];
-            int end = nums[nums.Length - 1];
+            int start = 0;
+            int end = nums.Length - 1;
 
-            while(start <= end)
+            while (start <= end)
             {
-                double mid = start + (end - start) / 2;
-                double ceils = Math.Ceiling(mid);
+                int median = start + (end - start) / 2;
+
+                if (nums[median] == target)
+                {
+                    return median;
+                }
+                else if (nums[median] < target)
+                {
+                    start = median + 1;
+                }
+                else
+                {
+                    end = median - 1;
+                    // return end;
+                }
+
             }
-            return 0;
+            return start;
+
         }
     }
 }
