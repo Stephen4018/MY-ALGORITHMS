@@ -644,7 +644,6 @@ class Program
             lx.Add(w.Substring(0, 1).ToUpper() + w.Substring(1).ToLower());
 
 
-
         }
         //Console.WriteLine(string.Join("-", lx));
 
@@ -657,7 +656,7 @@ class Program
         int subtract = Math.Abs( counted - start);
         if( miu.Length < subtract || start < 0 || miu.Length == 0)
         {
-            Console.WriteLine("null");
+            //Console.WriteLine("null");
         }
         int j = 0;
         for(int i = start; j < counted; i++)
@@ -675,10 +674,13 @@ class Program
         //hasSingleMaximum(an);
         //Console.WriteLine(hasSingleMaximum(an));
         //Console.WriteLine(isMaritan(ann));
-        Console.WriteLine(isSelfReferential(che));
+        //Console.WriteLine(isSelfReferential(che));
 
         leetcode_sir_Angelo_Day1 method = new leetcode_sir_Angelo_Day1();
-        method.FirstBadVersion(10);
+        //method.FirstBadVersion(10);
+
+        Console.WriteLine(Count_Letter("bbbaaayyyYMMmmmCCAA567844"));
+        Console.WriteLine(18 % 2);
     }
 
 
@@ -747,6 +749,25 @@ class Program
         }
         return 1;
 
+    }
+
+    public static string Count_Letter(string letter)
+    {
+        string lower = letter.ToLower();
+        char[] chars = lower.ToCharArray();
+        HashSet<string> set = new HashSet<string>();
+        int num = 0;
+        foreach(char c in chars)
+        {
+
+            if(char.IsLetter(c))
+            {
+               num = chars.Count(x => x == c);
+                set.Add($"{num}{c}");
+
+            }
+        }
+        return string.Join(",", set);
     }
 
 
