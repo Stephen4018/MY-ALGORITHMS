@@ -678,9 +678,9 @@ class Program
 
         leetcode_sir_Angelo_Day1 method = new leetcode_sir_Angelo_Day1();
         //method.FirstBadVersion(10);
-
-        Console.WriteLine(Count_Letter("bbbaaayyyYMMmmmCCAA567844"));
-        Console.WriteLine(18 % 2);
+        int[] aj = { 1, -1, 2, -2, 3 };
+    Console.WriteLine(Ret("zodiacs"));
+        
     }
 
 
@@ -770,8 +770,88 @@ class Program
         return string.Join(",", set);
     }
 
+    public static bool Prime_Factor(int number)
+    {
+        int[] fact = { 2, 3, 5 };
+        foreach(int i in fact)
+        {
+            int divide = number / i;
+            if (divide % 2 > 0 && divide % 3 > 0 && divide % 5 > 0)
+            {
+                return false;
+            }
+            return true;
+        }
+        return false;
+    }
 
-    
+    public static int FilterString(string s)
+    {
+        //char[] check = s.ToCharArray();
+        string word = "";
+        foreach (char k in s) 
+        {
+            if (char.GetNumericValue(k) >= 0)
+            {
+                word += k;
+            }
+        }
+        return int.Parse(word);
+        
+    }
+
+    public static bool TwoPositive(int one, int two, int three)
+
+    {
+        List<int> list = new List<int>() { one, two, three};
+        int count = 0;
+        foreach(int x in list) 
+        {
+            if(x >0)
+            {
+                count++;
+            }
+        }
+        if (count != 2) return false;
+        return true;
+    }
+
+    public static List<char> alph()
+    {
+        List<char> alphabets = new List<char>();
+
+        for (char c = 'a'; c <= 'z'; c++)
+        {
+            alphabets.Add(c);
+        }
+        return alphabets;
+    }
+    public static int Ret(string str)
+    {
+        List<char> alphabets = alph();
+        string vowel = "aeiou";
+        int count = 0;
+        foreach(char c in alphabets)
+        {
+            if (!vowel.Contains(c))
+            {
+                count += alphabets.IndexOf(c) + 1;
+            }
+            else
+            {
+                if (alphabets.IndexOf(c) + 1 > count)
+                    count = alphabets.IndexOf(c) + 1;
+            }
+
+
+        }
+        return count;
+    }
+
+
+
+
+
 
 
 
