@@ -10,14 +10,28 @@ namespace MY_ALGORITHMS
 {
     public class JMyinxin
     {
-   //     A little boy is studying arithmetics.He has just learned how to add two integers, written one below another, column by column.But he always forgets about the important part - carrying.
-   //     Given two integers, find the result which the little boy will get.
-   //     Example
-   //     For param1 = 456 and param2 = 1734, the output should be 1180
+        //     A little boy is studying arithmetics.He has just learned how to add two integers, written one below another, column by column.But he always forgets about the important part - carrying.
+        //     Given two integers, find the result which the little boy will get.
+        //     Example
+        //     For param1 = 456 and param2 = 1734, the output should be 1180
 
-   // 456
-   //1734
-   // + ____
-   //1180
+        // 456 //1734 // + ____  //1180
+
+        public int AdditionWithoutCarrying(int a, int b)
+        {
+            string max = Math.Max(a, b).ToString();
+            char[] chars = a.ToString().Reverse().ToArray();
+            char[] chars2 = b.ToString().Reverse().ToArray();
+
+            for(int i = 0; i < max.Length;)
+            {
+
+            }
+
+            return 0;
+
+
+        }
+
     }
 }
