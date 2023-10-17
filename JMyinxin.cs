@@ -19,13 +19,16 @@ namespace MY_ALGORITHMS
 
         public int AdditionWithoutCarrying(int a, int b)
         {
-            string max = Math.Max(a, b).ToString();
-            char[] chars = a.ToString().Reverse().ToArray();
-            char[] chars2 = b.ToString().Reverse().ToArray();
+            char[] word1 = a.ToString().ToCharArray();
+            char[] word2 = b.ToString().ToCharArray();
 
-            for(int i = 0; i < max.Length;)
+            Array.Reverse(word1);
+            Array.Reverse(word2);
+            int len = Math.Max(a,b).ToString().Length;
+
+            for (int i = 0; i < len; i++)
             {
-
+                
             }
 
             return 0;
